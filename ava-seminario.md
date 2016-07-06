@@ -9,7 +9,7 @@ date: 2016-08-12 16:40:00 -0300
 - **Tamanho**: Grupos de até 3 alunos
 - **Duração**: até 20 minutos por equipe + tempo para perguntas
 - **Tema**: linguagens de programação
-    + **Sugestões**: linguagens de script (ex.: Ruby, Python), linguagens para domínios específicos (ex.: R, Matlab), linguagens para sistemas distribuídos (ex.: Erlang, Elixir), linguagens funcionais (ex.: Haskell), outros (XSLT, Swift)
+    + **Sugestões**: linguagens de script (ex.: Ruby, Python), linguagens para domínios específicos (ex.: R, Matlab), linguagens para sistemas distribuídos (ex.: Erlang, Elixir), linguagens funcionais (ex.: Haskell), outros (XSLT, Swift). Veja outras linguagens em <https://repl.it/languages>
 - **Abordagem**:
     - a equipe deve explicar as principais características da linguagem escolhida, dando destaque às características que a diferenciam das outras. As características devem ser ilustradas com exemplos de código-fonte.
 - **Dicas para evitar uma apresentação cansativa**
@@ -83,4 +83,3 @@ date: 2016-08-12 16:40:00 -0300
     + Equipe 10
     + Equipe 11
     + Equipe 12
-    
