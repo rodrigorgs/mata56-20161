@@ -42,7 +42,7 @@ amigo(joao, joao).
 % amigo(X, Y).
 ```
 
-O identificador `_` representa uma variável cujo valor não estamos interessados. Cada ocorrência de `_` representa uma variável diferente. Exemplo:
+Variáveis começadas por `_` não são exibidas no resultado da consulta. Exemplos: `_X`, `_Y`. Usamos nomes começados por `_`_ para variáveis cujo valor não estamos interessados. Exemplo de código:
 
 ```prolog
 turma(mata56, turma1, rodrigo).
@@ -50,11 +50,19 @@ turma(mata56, turma2, rodrigo).
 turma(mata62, turma3, ivan).
 turma(mata62, turma4, rodrigo).
 
-% Consultas:
-% % Quais sao as disciplinas de Rodrigo (não importa a turma)?
-% turma(D, _, rodrigo).
-% % Quais são os professores (não importa a disciplina e a turma)?
+%% Consulta: Quais sao as disciplinas de Rodrigo (não exibe as turmas)?
+% turma(D, _T, rodrigo).
+```
+
+Além disso, a variável anônima, `_` (somente `_`), tem a seguinte peculiaridade: cada ocorrência dela representa uma variável distinta. Exemplo de consulta: 
+
+```prolog
+%% Quais são os professores (não importa a disciplina e a turma)?
 % turma(_, _, P).
+%% Note que o primeiro e o segundo argumentos de turma
+%% são variáveis diferentes, que podem assumir valores
+%% diferentes. A consulta é equivalente a
+% turma(_X, _Y, P).
 ```
 
 Ao escrever termos, `,` representa `e` (conjunção lógica) e `;` representa `ou` (disjunção lógica).
