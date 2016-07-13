@@ -1,7 +1,7 @@
 ---
 layout: page
 categories: avaliacao
-title: "Prova escrita de Prolog"
+title: "(Peso 3) Prova escrita de Prolog"
 date: 2016-08-03 16:40:00 -0300
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 categories: avaliacao
-title: "Prova prática de LISP"
+title: "(Peso 2) Prova prática de LISP"
 date: 2016-09-21 16:40:00 -0300
 ---
 

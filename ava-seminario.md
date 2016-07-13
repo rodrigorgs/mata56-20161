@@ -1,7 +1,7 @@
 ---
 layout: page
 categories: avaliacao
-title: "Seminários sobre linguagens de programação"
+title: "(Peso 2) Seminários sobre linguagens de programação"
 date: 2016-08-12 16:40:00 -0300
 ---
 
