@@ -2,7 +2,7 @@
 layout: page
 categories: avaliacao
 title: "(Peso 3) Prova escrita de Prolog"
-date: 2016-08-05 16:40:00 -0300
+date: 2016-08-12 16:40:00 -0300
 ---
 
 Assunto:

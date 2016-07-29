@@ -2,12 +2,12 @@
 layout: page
 categories: avaliacao
 title: "(Peso 2) Seminários sobre linguagens de programação"
-date: 2016-08-12 16:40:00 -0300
+date: 2016-08-24 16:40:00 -0300
 ---
 
 - **Valor**: A definir
-- **Tamanho**: Grupos de até 3 alunos
-- **Duração**: até 20 minutos por equipe + tempo para perguntas
+- **Tamanho**: 10 grupos de 3 alunos e 1 grupo de 2 alunos
+- **Duração**: até 15 minutos por equipe + tempo para perguntas
 - **Tema**: linguagens de programação
     + **Sugestões**: linguagens de script (ex.: Ruby, Python), linguagens para domínios específicos (ex.: R, Matlab), linguagens para sistemas distribuídos (ex.: Erlang, Elixir), linguagens funcionais (ex.: Haskell), outros (XSLT, Swift). Veja outras linguagens em <https://repl.it/languages>
 - **Abordagem**:
@@ -52,18 +52,16 @@ date: 2016-08-12 16:40:00 -0300
     + Equipe 1
     + Equipe 2
     + Equipe 3
-- 17/08
     + Equipe 4
+- 17/08
     + Equipe 5
     + Equipe 6
-- 19/08
     + Equipe 7
     + Equipe 8
+- 19/08
     + Equipe 9
-- 24/08
     + Equipe 10
     + Equipe 11
-    + Equipe 12
 
 ### Turma 02
 
@@ -71,15 +69,13 @@ date: 2016-08-12 16:40:00 -0300
     + Equipe 1
     + Equipe 2
     + Equipe 3
-- 17/08
     + Equipe 4
+- 17/08
     + Equipe 5
     + Equipe 6
-- 19/08
     + Equipe 7
     + Equipe 8
+- 19/08
     + Equipe 9
-- 24/08
     + Equipe 10
     + Equipe 11
-    + Equipe 12
