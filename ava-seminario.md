@@ -48,34 +48,34 @@ date: 2016-08-24 16:40:00 -0300
 
 ### Turma 01
 
-- 12/08
-    + Equipe 1
-    + Equipe 2
-    + Equipe 3
-    + Equipe 4
-- 17/08
+- 24/08
+    + Python: Joaldino, Paula, Icaro
+    + ???: Kaio, Roberto, Weslley
+    + ???: Carla, Igor, Priscila
+    + Ruby: Felipe, Ivanildo, Jadson
+- 26/08
     + Equipe 5
     + Equipe 6
     + Equipe 7
     + Equipe 8
-- 19/08
+- 31/08
     + Equipe 9
     + Equipe 10
     + Equipe 11
 
 ### Turma 02
 
-- 12/08
-    + Equipe 1
-    + Equipe 2
-    + Equipe 3
-    + Equipe 4
-- 17/08
-    + Equipe 5
-    + Equipe 6
-    + Equipe 7
-    + Equipe 8
-- 19/08
+- 24/08
+    + Ruby: Ian, Ramon Oliveira
+    + Perl: Deuana, Angelmario, Tassia
+    + Python: Francisleide, Elayne, Yane
+    + C#: José???, Victor, Braian
+- 26/08
+    + C: Adiel, Ubirajara, Jeferson
+    + Java: Rafael, Adriano, Luiz Rosario
+    + Cobol: Ramon, Rafael Trigueiros, Pablo
+    + ???: Bruno, Eduardo, Ricardo
+- 31/08
     + Equipe 9
     + Equipe 10
     + Equipe 11
