@@ -49,24 +49,24 @@ date: 2016-08-24 16:40:00 -0300
 ### Turma 01
 
 - 24/08
-    + Python: Joaldino, Paula, Icaro
-    + ???: Kaio, Roberto, Weslley
-    + ???: Carla, Igor, Priscila
+    + C: Joaldino, Paula, Icaro
+    + C++: Kaio, Roberto, Weslley
+    + C#: Carla, Igor, Lucas Almeida
     + Ruby: Felipe, Ivanildo, Jadson
 - 26/08
-    + Equipe 5
-    + Equipe 6
-    + Equipe 7
-    + Equipe 8
+    + Haskell: Weydson, Frederico, Telson
+    + LaTeX: Vinicius, Leonardo, Antonio
+    + PHP: Priscila, Edicarla
+    + Perl: Fernanda, Raphael, ...
 - 31/08
-    + Equipe 9
-    + Equipe 10
-    + Equipe 11
+    + ???: Joevan, Osvaldo, ...
+    + Python: André, Jonatas, Rafael
+    + ???: Jonathan, Vitor Vidal, Joselito
 
 ### Turma 02
 
 - 24/08
-    + Ruby: Ian, Ramon Oliveira
+    + Ruby: Ian, Ramon Oliveira, Suzanne
     + Perl: Deuana, Angelmario, Tassia
     + Python: Francisleide, Elayne, Yane
     + C#: José???, Victor, Braian
@@ -74,8 +74,8 @@ date: 2016-08-24 16:40:00 -0300
     + C: Adiel, Ubirajara, Jeferson
     + Java: Rafael, Adriano, Luiz Rosario
     + Cobol: Ramon, Rafael Trigueiros, Pablo
-    + ???: Bruno, Eduardo, Ricardo
+    + Scala: Bruno, Eduardo, Ricardo
 - 31/08
-    + Equipe 9
-    + Equipe 10
+    + Swift: Ramon de Carvalho, Danilo, Paulo Henrique
+    + PHP: Naara, Rodrigo, Tassio
     + Equipe 11
