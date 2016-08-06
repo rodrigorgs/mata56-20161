@@ -78,4 +78,4 @@ date: 2016-08-24 16:40:00 -0300
 - 31/08
     + Swift: Ramon de Carvalho, Danilo, Paulo Henrique
     + PHP: Naara, Rodrigo, Tassio
-    + Equipe 11
+    + ???: Daniel, ...
