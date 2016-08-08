@@ -69,7 +69,7 @@ date: 2016-08-24 16:40:00 -0300
     + Ruby: Ian, Ramon Oliveira, Suzanne
     + Perl: Deuana, Angelmario, Tassia
     + Python: Francisleide, Elayne, Yane
-    + C#: José???, Victor, Braian
+    + C#: José, Victor, Braian
 - 26/08
     + C: Adiel, Ubirajara, Jeferson
     + Java: Rafael, Adriano, Luiz Rosario
@@ -78,4 +78,4 @@ date: 2016-08-24 16:40:00 -0300
 - 31/08
     + Swift: Ramon de Carvalho, Danilo, Paulo Henrique
     + PHP: Naara, Rodrigo, Tassio
-    + ???: Daniel, ...
+    + VBScript: Daniel, Guilherme
