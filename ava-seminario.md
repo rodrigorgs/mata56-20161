@@ -2,7 +2,7 @@
 layout: page
 categories: avaliacao
 title: "(Peso 2) Seminários sobre linguagens de programação"
-date: 2016-08-24 16:40:00 -0300
+date: 2016-08-26 16:40:00 -0300
 ---
 
 - **Valor**: A definir
@@ -48,34 +48,34 @@ date: 2016-08-24 16:40:00 -0300
 
 ### Turma 01
 
-- 24/08
+- 26/08
     + C: Joaldino, Paula, Icaro
     + C++: Kaio, Roberto, Weslley
     + C#: Carla, Igor, Lucas Almeida
     + Ruby: Felipe, Ivanildo, Jadson
-- 26/08
+- 31/08
     + Haskell: Weydson, Frederico, Telson
     + LaTeX: Vinicius, Leonardo, Antonio
     + PHP: Priscila, Edicarla
     + Perl: Fernanda, Raphael, ...
-- 31/08
+- 02/09
     + ???: Joevan, Osvaldo, ...
     + Python: André, Jonatas, Rafael
     + ???: Jonathan, Vitor Vidal, Joselito
 
 ### Turma 02
 
-- 24/08
+- 26/08
     + Ruby: Ian, Ramon Oliveira, Suzanne
     + Perl: Deuana, Angelmario, Tassia
     + Python: Francisleide, Elayne, Yane
     + C#: José, Victor, Braian
-- 26/08
+- 31/08
     + C: Adiel, Ubirajara, Jeferson
     + Java: Rafael, Adriano, Luiz Rosario
     + Cobol: Ramon, Rafael Trigueiros, Pablo
     + Scala: Bruno, Eduardo, Ricardo
-- 31/08
+- 02/09
     + Swift: Ramon de Carvalho, Danilo, Paulo Henrique
     + PHP: Naara, Rodrigo, Tassio
     + VBScript: Daniel, Guilherme
