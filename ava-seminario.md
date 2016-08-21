@@ -51,8 +51,8 @@ date: 2016-08-26 16:40:00 -0300
 - 26/08
     + Swift: Joaldino, Paula, Icaro
     + C++: Kaio, Roberto, Weslley
-    + C#: Carla, Igor, Lucas Almeida
     + Ruby: Felipe, Ivanildo, Jadson
+    + Java: Mario, Caio Souza
 - 31/08
     + Haskell: Weydson, Frederico, Telson
     + LaTeX: Vinicius, Leonardo, Antonio
@@ -62,7 +62,7 @@ date: 2016-08-26 16:40:00 -0300
     + R: Joevan, Osvaldo, ...
     + Python: André, Jonatas, Rafael
     + APL: Jonathan, Vitor Vidal, Joselito
-    + Java: Mario, Caio Souza
+    + C#: Carla, Igor, Lucas Almeida
 
 ### Turma 02
 
