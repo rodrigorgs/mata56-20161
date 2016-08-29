@@ -57,9 +57,9 @@ date: 2016-08-26 16:40:00 -0300
     + Haskell: Weydson, Frederico, Telson
     + LaTeX: Vinicius, Leonardo, Antonio
     + PHP: Priscila, Edicarla
-    + Lua: Fernanda, Raphael, ...
+    + Lua: Fernanda, Raphael, Ariel
 - 02/09
-    + R: Joevan, Osvaldo, ...
+    + R: Joevan, Osvaldo
     + Python: André, Jonatas, Rafael
     + APL: Jonathan, Vitor Vidal, Joselito
     + C#: Carla, Igor, Lucas Almeida
