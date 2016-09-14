@@ -25,7 +25,7 @@ Escreva uma expressão e clique em `Avaliar` para exibir o resultado da express�
 <button class="go">Avaliar</button>
 </div>
 
-## Interpretador de expressões
+## Interpretador de programas
 
 Escreva um programa, possivelmente composto de várias expressões e clique em `Rodar`. Apenas será exibido no console o que for impresso com a função `print`.
 
