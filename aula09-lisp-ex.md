@@ -5,6 +5,13 @@ date:   2016-09-14 16:40:00 -0300
 categories: aula
 ---
 
+<script type="text/javascript">
+    window.apostila = "lisp";
+    simplesEval = simplesEvalLisp;
+    multiEval = multiEvalLisp;
+    window.codeMirrorLanguage = "commonlisp";
+</script>
+
 # Exercícios
 
 Agora é com você. Defina as seguintes funções:
