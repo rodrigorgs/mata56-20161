@@ -65,24 +65,26 @@ Função `(obesidade peso altura)`, que retorna `'abaixoDoPeso` se o IMC é meno
 <button class="go">Rodar</button>
 </div>
 
-## Função
+# Funções recursivas
 
-Função `(length l)` (retorna o comprimento da lista l, isto é, seu número de elementos). Use recursão.
+## Função compr
+
+Função `(compr l)` (retorna o comprimento da lista l, isto é, seu número de elementos). Use recursão.
 
 <!-- 
-(defun length (l)
+(defun compr (l)
   (cond
     ((null l) 0)
-    (t (+ 1 (length (cdr l))))))
+    (t (+ 1 (compr (cdr l))))))
  -->
 
 <div class="lesson">
 <textarea class="code">
 (defun ...)
 ; testes
-(teste 0 (length '()))
-(teste 1 (length '(1)))
-(teste 3 (length '(1 2 3)))
+(teste 0 (compr '()))
+(teste 1 (compr '(1)))
+(teste 3 (compr '(1 2 3)))
 </textarea>
 <div class="output"></div>
 <div class="output"></div>
@@ -152,6 +154,72 @@ Função `(freq x l)` (indica quantas vezes o elemento x aparece na lista l):
     ((= (car l) x) (+ 1 (freq x (cdr l))))
     (t (freq x (cdr l)))))
  -->
+
+<div class="lesson">
+<textarea class="code">
+(defun ...)
+; testes
+; ...
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return multiEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
+
+# Mais funções
+
+## Função qtd-pares
+
+A função `(qtd-pares l)` retorna a quantidade de elementos pares na lista `l`.
+
+<div class="lesson">
+<textarea class="code">
+(defun ...)
+; testes
+; ...
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return multiEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
+
+## Função dobra-tudo
+
+Função `(dobra-tudo l)` retorna uma lista em que cada elemento é o dobro do elemento correspondente da lista `l`:
+
+<div class="lesson">
+<textarea class="code">
+(defun ...)
+; testes
+; ...
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return multiEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
+
+## Função filtra-pares
+
+A função `(filtra-pares l)` retorna uma lista igual à lista `l` removendo-se os elementos ímpares:
+
+<div class="lesson">
+<textarea class="code">
+(defun ...)
+; testes
+; ...
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return multiEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
+
+## Função todos-pares
+
+A função `(todos-pares l)` retorna verdadeiro se e somente se todos os elementos da lista `l` são números pares.
 
 <div class="lesson">
 <textarea class="code">
