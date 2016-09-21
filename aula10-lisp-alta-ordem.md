@@ -20,10 +20,13 @@ categories: aula
 <textarea class="code">
 (defun map (f l)
     (cond
-        ((equal l Nil) Nil)
+        ((null l) Nil)
         (t (cons (f (car l)) (map f (cdr l))))))
+
 (defun dobro (n) (* n 2))
-(print (map dobro (list 1 2 3 4 5)))
+
+;
+(teste '(2 4 6 8 10) (map dobro '(1 2 3 4 5)))
 </textarea>
 <div class="output"></div>
 <div class="output"></div>
