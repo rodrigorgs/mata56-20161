@@ -41,6 +41,8 @@ console.log(`O aluno ${nome} tem ${idade} anos.`);
 <button class="go">Rodar</button>
 </div>
 
+Se o `let` e o `` ` `` não funcionarem, seu navegador pode estar desatualizado. Você pode conseguir rodar trocando por `var` e `"` (embora o resultado não seja exatamente igual).
+
 ### Objetos
 
 Objetos em JavaScript são estruturas chave-valor, similar a estruturas que em outras linguagens são chamadas de hash, mapa ou dicionário. As chaves são chamadas propriedades do objeto. Exemplo:
@@ -80,13 +82,13 @@ Uma função pura, sem efeitos colaterais, vai sempre retornar o mesmo resultado
 
 A seguir, algumas operações sobre arrays. Nos exemplos, considere que `a` é um array.
 
-
-|         Operação        |  destrutiva |    não-destrutiva    |
-|-------------------------|-------------|----------------------|
-| Obter primeiro elemento | ...         | `x = a[0]`           |
-| Obter restante da lista | `a.shift()` | `l = a.slice(0, -1)` |
-| Adicionar x ao final    | `a.push(x)` | `l = a.concat([x])`  |
-
+|         Operação         |  destrutiva |    não-destrutiva   |
+|--------------------------|-------------|---------------------|
+| Obter primeiro elemento  |             | `x = a[0]`          |
+| Obter restante da lista  | `a.shift()` | `l = a.slice(1)`    |
+| Adicionar x ao final     | `a.push(x)` | `l = a.concat([x])` |
+| Comprimento do array     |             | `x = a.length`      |
+| Criar uma cópia da lista |             | `l = a.slice()`     |
 
 ### Funções como cidadãos de primeira classe
 
@@ -152,7 +154,23 @@ console.log(dobro);
 <button class="go">Rodar</button>
 </div>
 
-Funções de alta ordem em JavaScript para arrays: `forEach`, `filter`, `map`, `reduce`, `some`, `every`, `find`, `findIndex`, 
+Ou a função `forEach`, para iterar sobre os elementos:
+
+<div class="lesson">
+<textarea class="code">
+let numeros = [1, 2, 3, 5, 8, 13];
+numeros.forEach(function (num) {
+   console.log(num); 
+});
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
+
+
+Funções de alta ordem em JavaScript para arrays: `forEach`, `filter`, `map`, `reduce`, `some`, `every`, `find`, `findIndex`.
 
 ## Funções anônimas (sintaxe nova)
 
@@ -160,8 +178,8 @@ Há uma notação compacta para definir funções anônimas: `x => x * 2` (funç
 
 - `(x, y) => x + y`: função soma (para funções com dois ou mais argumentos, eles precisam ser envoltos em parênteses)
 - `() => 42`: função que não recebe argumentos e sempre retorna 42.
-- `x => { console.log(x); x + 1 }`: função sucessor com impressão no console (para rodar duas ou mais instruções, envolva-as com chaves; o resultado da última instrução é retornado)
-- `(n, a) => ({nome: n, altura: a})`: função que retorna um objeto construído a partir de dois parâmetros (para retornar um objeto/hash, envolva as chaves em parênteses)
+- `x => { console.log(x); console.log(x + 1); }`: função sucessor com impressão no console (para rodar duas ou mais instruções, envolva-as com chaves; ao usar chaves, nenhum valor é retornado)
+- `(n, a) => ({nome: n, altura: a})`: função que retorna um objeto construído a partir de dois parâmetros (para retornar um objeto/hash, envolva as chaves em parênteses, para evitar ambiguidade com o caso anterior)
 
 (Experimente [converter essa notação](http://babeljs.io/repl/) para JavaScript antigo)
 
@@ -187,18 +205,21 @@ console.log(pessoa);
 
 ### map
 
-Implemente a função `map` em JavaScript:
+Implemente a função `meuMap` em JavaScript:
 
-(Duas implementações possíveis: criando um array e modificando-o com operações destrutivas, ou usando apenas operações não-destrutivas)
+(Duas implementações possíveis: criando um array e modificando-o com operações destrutivas, ou usando apenas operações não-destrutivas; )
 
 <div class="lesson">
 <textarea class="code">
-function map(funcao, lista) {
-  // TODO: implementar
-  return [];
+function meuMap(funcao, lista) {
+  let resultado = [];
+  for (let i = 0; i < lista.length; i++) {
+    // implemente aqui...
+  }
+  return resultado;
 }
 
-teste([2, 4, 6], map(x => x * 2, [1, 2, 3]));
+teste([2, 4, 6], meuMap(x => x * 2, [1, 2, 3]));
 </textarea>
 <div class="output"></div>
 <div class="output"></div>
@@ -208,41 +229,43 @@ teste([2, 4, 6], map(x => x * 2, [1, 2, 3]));
 
 ## Filmes
 
-Nos exemplos a seguir, considere os seguintes dados (execute o código para carregar a variável `filmes` na memória):
+(Baseado em <http://reactivex.io/learnrx/>.)
+
+Nos exemplos a seguir, considere os seguintes dados (**execute o código** para carregar a variável `filmes` na memória):
 
 <div class="lesson">
 <textarea class="code">
 filmes = [
 {
     "id": 70111470,
-    "title": "Die Hard",
-    "boxart": "http://cdn-0.nflximg.com/images/2891/DieHard.jpg",
+    "titulo": "Die Hard",
+    "capa": "http://cdn-0.nflximg.com/images/2891/DieHard.jpg",
     "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
-    "rating": 4.0,
+    "nota": 4.0,
     "bookmark": []
 },
 {
     "id": 654356453,
-    "title": "Bad Boys",
-    "boxart": "http://cdn-0.nflximg.com/images/2891/BadBoys.jpg",
+    "titulo": "Bad Boys",
+    "capa": "http://cdn-0.nflximg.com/images/2891/BadBoys.jpg",
     "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
-    "rating": 5.0,
+    "nota": 5.0,
     "bookmark": [{ id:432534, time:65876586 }]
 },
 {
     "id": 65432445,
-    "title": "The Chamber",
-    "boxart": "http://cdn-0.nflximg.com/images/2891/TheChamber.jpg",
+    "titulo": "The Chamber",
+    "capa": "http://cdn-0.nflximg.com/images/2891/TheChamber.jpg",
     "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
-    "rating": 4.0,
+    "nota": 4.0,
     "bookmark": []
 },
 {
     "id": 675465,
-    "title": "Fracture",
-    "boxart": "http://cdn-0.nflximg.com/images/2891/Fracture.jpg",
+    "titulo": "Fracture",
+    "capa": "http://cdn-0.nflximg.com/images/2891/Fracture.jpg",
     "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
-    "rating": 4.5,
+    "nota": 4.5,
     "bookmark": [{ id:432534, time:65876586 }]
 }
 ];
@@ -281,18 +304,18 @@ let x = filmes.filter(/* complete o código */);
 let respostaCorreta = [
 {
     "id": 654356453,
-    "title": "Bad Boys",
-    "boxart": "http://cdn-0.nflximg.com/images/2891/BadBoys.jpg",
+    "titulo": "Bad Boys",
+    "capa": "http://cdn-0.nflximg.com/images/2891/BadBoys.jpg",
     "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
-    "rating": 5.0,
+    "nota": 5.0,
     "bookmark": [{ id:432534, time:65876586 }]
 },
 {
     "id": 675465,
-    "title": "Fracture",
-    "boxart": "http://cdn-0.nflximg.com/images/2891/Fracture.jpg",
+    "titulo": "Fracture",
+    "capa": "http://cdn-0.nflximg.com/images/2891/Fracture.jpg",
     "uri": "http://api.netflix.com/catalog/titles/movies/70111470",
-    "rating": 4.5,
+    "nota": 4.5,
     "bookmark": [{ id:432534, time:65876586 }]
 }
 ];
@@ -327,6 +350,7 @@ A função `reduce` aplica uma função dada a um acumulador e cada elemento do 
 `arr.reduce(f, valorInicial)`, onde
 
 - `valorInicial` é o valor inicial do acumulador
+    - se `valorInicial` não for passado, a função assume que o valor do inicial do acumulador é igual ao valor do primeiro elemento de `arr`.
 - `f` é uma função que recebe dois parâmetros:
     - `acum`: o valor atual do acumulador
     - `x`: o elemento sendo processado atualmente no array
@@ -334,13 +358,49 @@ A função `reduce` aplica uma função dada a um acumulador e cada elemento do 
 - o retorno da função `f` é atribuído ao acumulador para ser usado na próxima invocação de `f`
 - `reduce` retorna o valor final do acumulador
 
-Exemplo (função soma):
+Por exemplo, considere a função somatório, que retorna o somatório dos elementos de um array, escrito da forma tradicional, com `for`:
 
 <div class="lesson">
 <textarea class="code">
-let somaNotas = filmes.map(x => x.rating).reduce((acum, x) => x + acum, 0);
+function somatorio(arr) {
+    let acum = 0;
 
-teste(18.5, somaNotas);
+    for (let i = 0; i < arr.length; i++) {
+        let x = arr[i];
+        acum = acum + x;
+    }
+
+    return acum;
+}
+
+console.log(somatorio([1, 2, 3, 4]));
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
+
+A função pode ser escrita de forma mais compacta usando o `reduce`:
+
+<div class="lesson">
+<textarea class="code">
+let somatorio = arr => arr.reduce((acum, x) => acum + x);
+console.log(somatorio([1, 2, 3, 4]));
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
+
+Exemplo para somar as notas dos filmes:
+
+<div class="lesson">
+<textarea class="code">
+let somaNotas = filmes.map(x => x.nota).reduce((acum, x) => x + acum, 0);
+
+teste(17.5, somaNotas);
 </textarea>
 <div class="output"></div>
 <div class="output"></div>
@@ -352,9 +412,11 @@ teste(18.5, somaNotas);
 
 Agora use reduce para retornar a maior nota do conjunto.
 
+Dica: use o operador ternário `?:`. A expressão `condicao ? x : y` retorna `x` se a `condicao` for verdadeira, e `y` caso contrário.
+
 <div class="lesson">
 <textarea class="code">
-let maiorNota = filmes.map(x => x.rating).reduce(/* complete o código */);
+let maiorNota = filmes.map(x => x.nota).reduce(/* complete o código */);
 
 teste(18.5, somaNotas);
 </textarea>
