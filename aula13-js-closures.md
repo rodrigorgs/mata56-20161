@@ -1,7 +1,7 @@
 ---
 layout: lisp
 title:  "JavaScript: Nomes, vinculação, escopo e closures"
-date:   2016-09-23 16:40:00 -0300
+date:   2016-10-07 16:40:00 -0300
 categories: aula
 ---
 
@@ -49,9 +49,10 @@ O ambiente de referenciamento da linha 7 corresponde às variáveis `glob` e `te
 
 ## Regras de escopo de Javascript
 
-Considere agora o seguinte exemplo:
+Considere agora o exemplo a seguir. O que acontecerá quando a linha 8 for executada? Vai dar erro? Para responder a essa pergunta, devemos descobrir se a variável `xext` faz ou não faz parte do ambiente de referenciamento da linha 8 (e da função `interna`, em geral). Faça suas apostas e execute o código.
 
-```javascript
+<div class="lesson">
+<textarea class="code">
 /* 1  */ var glob = 1;
 /* 2  */ 
 /* 3  */ function externa() {
@@ -64,17 +65,20 @@ Considere agora o seguinte exemplo:
 /* 10 */     interna();
 /* 11 */ }
 /* 12 */ externa();
-```
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
 
-O que acontecerá quando a linha 8 for executada? Vai dar erro? Para responder a essa pergunta, devemos descobrir se a variável `xext` faz ou não faz parte do ambiente de referenciamento da linha 8 (e da função `interna`, em geral).
-
-Faça suas apostas e execute o código no console do seu navegador.
 
 Para buscar da variável `xint`, o interpretador Javascript primeiro procura nas variáveis definidas dentro da função `interna`. Não encontrando, ele vai procurar variáveis definidas no contexto da função `externa`. Se ainda não encontrar, procura nas variáveis globais. Ou seja, o ambiente de referenciamento inclui o escopo atual e mais todos os escopos externos.
 
 Então o que vai acontecer no seguinte código?
 
-```javascript
+<div class="lesson">
+<textarea class="code">
 /* 1  */ var x = 1;
 /* 2  */ 
 /* 3  */ function externa() {
@@ -87,7 +91,12 @@ Então o que vai acontecer no seguinte código?
 /* 10 */     interna();
 /* 11 */ }
 /* 12 */ externa();
-```
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
 
 Existem três vinculações diferentes do nome `x`, com diferentes escopos. Surge a dúvida: se o `x` da linha 1 tem escopo global, isso significa que esse escopo se estende à linha 8?
 
@@ -104,34 +113,46 @@ Closures (do inglês, fechamento) são funções que referenciam variáveis inde
 
 Vamos começar com um exemplo simples, sem closure:
 
-```javascript
+<div class="lesson">
+<textarea class="code">
 function alo() {
     var nome = "Turing";
 
     function mostraNome() {
-        alert("Alo, " + nome);
+        console.log("Alo, " + nome);
     }
     mostraNome();
 }
 alo();
-```
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
 
 Agora um exemplo mais complexo, com closure:
 
-```javascript
+<div class="lesson">
+<textarea class="code">
 function criaFuncaoAlo() {
     var nome = "Turing";
 
     function mostraNome() {
-        alert("Alo, " + nome);
+        console.log("Alo, " + nome);
     }
     return mostraNome;
 }
 var alo = criaFuncaoAlo();
 alo();
-```
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
 
-O resultado é o mesmo, mas a função `criaFuncaoAlo` desta vez retorna a função interna `mostraNome`, sem executá-la. Em vez disso, a função só executada na última linha de código.
+O resultado é o mesmo, mas a função `criaFuncaoAlo` desta vez retorna a função interna `mostraNome`, sem executá-la. Em vez disso, a função só é executada na última linha de código.
 
 O código não é muito intuitivo. Normalmente, uma variável local definida em uma função só existe enquanto a função é executada; quando a execução termina, a variável deveria ser destruída e deixar de ser acessível. No exemplo, no entanto, a variável `nome` ainda está acessível depois que a função `criaFuncaoAlo` terminou de executar.
 
@@ -145,45 +166,56 @@ closure mostraNome =
 
 Mais um exemplo:
 
-```javascript
+<div class="lesson"><textarea class="code">
 function criaAlertRandom() {
     var x = Math.random();
     return function() {
         alert("Número sorteado: " + x);
-    }
+    };
 }
 var funcAlert1 = criaAlertRandom();
 var funcAlert2 = criaAlertRandom();
 funcAlert1();
 funcAlert2();
 funcAlert1();
-```
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
+
 
 Qual o resultado? Três números iguais? Três números diferentes? O primeiro número será igual ao terceiro? Faça suas apostas, execute e revise seu conhecimento sobre closures.
 
 Agora um exemplo mais útil, mostrando que parâmetros também são capturados por uma closure:
 
-```javascript
+<div class="lesson"><textarea class="code">
 function multiplicador(fator1) {
-    return function(fator2) {
+    return function (fator2) {
         return fator1 * fator2;
-    }
+    };
 }
 var dobro = multiplicador(2);
 var triplo = multiplicador(3);
-alert(dobro(4));
-alert(triplo(4));
-```
+console.log(dobro(4));
+console.log(triplo(4));
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
 
 A closure também pode alterar as variáveis capturadas:
 
-```javascript
+<div class="lesson"><textarea class="code">
 function criaContador() {
     var x = 0;
-    return function() {
+    return function () {
         x = x + 1;
         console.log(x);
-    }
+    };
 }
 var contadorA = criaContador();
 var contadorB = criaContador();
@@ -192,7 +224,12 @@ contadorA();
 contadorA();
 contadorB();
 contadorB();
-```
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
 
 ## Closures e programação orientada a objetos
 
@@ -200,7 +237,7 @@ Uma closure permite associar alguns dados (o ambiente) com a função que opera 
 
 Exemplo:
 
-```javascript
+<div class="lesson"><textarea class="code">
 function criaObjetoContador(nome) {
     var c = 0;
 
@@ -208,7 +245,7 @@ function criaObjetoContador(nome) {
         c = c + 1;
     }
     function mostra() {
-        alert(nome + ": " + c);
+        console.log(nome + ": " + c);
     }
 
     return {"incrementa": incrementa,
@@ -223,38 +260,116 @@ contadorB.incrementa();
 contadorA.incrementa();
 contadorA.mostra();
 contadorB.mostra();
-```
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
+</div>
 
-Obviamente, esse esquema é limitado, pois não há herança e polimorfismo. Veremos como fazer programação orientada a objetos em Javascript do jeito certo em outro momento.
+Obviamente, esse esquema é limitado, pois não há herança e polimorfismo.
 
-## Closures na prática
+## Closures na prática (programação web)
 
 É importante entender closures para programar Javascript para web? **Muito**! Grande parte do código que escrevemos em Javascript para web é baseado em eventos: definimos um comportamento, então anexamos o comportamento a um evento que é disparado pelo usuário (por exemplo, um clique). O código é geralmente escrito em um callback: uma função que é executada em resposta a um evento.
 
-Exemplo:
+Exemplo (rode o código e depois clique no botão):
 
-<div><script async src="//jsfiddle.net/hr17fgj4/embed/"></script>
-<p><a href="https://jsfiddle.net/hr17fgj4/">https://jsfiddle.net/hr17fgj4/</a></p>
+<div class="lesson"><textarea class="code">
+var botao = document.getElementById("botao1");
+botao.addEventListener('click', function(evento) {
+	console.log('Clicou no botão');
+});
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
 </div>
 
-Agora vamos para um exemplo mais complexo:
+<button id="botao1">botao1</button>
 
-<div><script async src="//jsfiddle.net/sftqbfj7/embed/"></script>
-<p><a href="https://jsfiddle.net/sftqbfj7/">https://jsfiddle.net/sftqbfj7/</a></p>
+Agora vamos fazer com três botões?
+
+<div class="lesson"><textarea class="code">
+var botoes = [
+  document.getElementById("botaoA"),
+  document.getElementById("botaoB"),
+  document.getElementById("botaoC")];
+var i, botao;
+
+for (i = 0; i < botoes.length; i++) {
+  botao = botoes[i];
+  botao.addEventListener('click', function(evento) {
+	console.log('Clicou no botão no índice ' + i);
+  });
+}
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
 </div>
 
-Não funcionou como você gostaria? Por quê?
+<button id="botaoA">botaoA</button>
+<button id="botaoB">botaoB</button>
+<button id="botaoC">botaoC</button>
 
-Que tal agora?
+Funcionou como você gostaria? Qual a explicação?
 
-<div><script async src="//jsfiddle.net/e1srfbbv/embed/"></script>
-<p><a href="https://jsfiddle.net/e1srfbbv/">https://jsfiddle.net/e1srfbbv/</a></p>
+Como resolver esse problema? A solução é capturar o índice `i` em uma função retornada dentro de outra função:
+
+<div class="lesson"><textarea class="code">
+function criaFuncaoAlerta(num) {
+  return function() { console.log('Clicou no botão no índice ' + num); };
+}
+
+var botoes = [
+  document.getElementById("botaoX"),
+  document.getElementById("botaoY"),
+  document.getElementById("botaoZ")];
+var i, botao;
+
+for (i = 0; i < botoes.length; i++) {
+  botao = botoes[i];
+  botao.addEventListener('click', criaFuncaoAlerta(i));
+}
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
 </div>
 
-Uma versão um pouco mais compacta (e obscura, mas ainda assim muito utilizada):
+<button id="botaoX">botaoX</button>
+<button id="botaoY">botaoY</button>
+<button id="botaoZ">botaoZ</button>
 
-<div><script async src="//jsfiddle.net/65j26erk/embed/"></script>
-<p><a href="https://jsfiddle.net/65j26erk/">https://jsfiddle.net/65j26erk/</a></p>
+Podemos fazer a mesma coisa sem criar uma função auxiliar (basta trocar `criaFuncaoAlerta` pela sua implementação como função anônima):
+
+<div class="lesson"><textarea class="code">
+var botoes = [
+  document.getElementById("botaoQ"),
+  document.getElementById("botaoW"),
+  document.getElementById("botaoE")];
+var i, botao;
+
+for (i = 0; i < botoes.length; i++) {
+  botao = botoes[i];
+  botao.addEventListener('click', (function (num) {
+      return function() { console.log('Clicou no botão no índice ' + num); };
+    })(i));
+}
+</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) { return simplesEval(str, info); }</pre>
+<button class="go">Rodar</button>
 </div>
 
-A última solução usa uma IIFE (immediately-invoked function expression, ou expressão de função invocada imediatamente).
+<button id="botaoQ">botaoQ</button>
+<button id="botaoW">botaoW</button>
+<button id="botaoE">botaoE</button>
+
+Note que definimos uma função anônima e chamamos essa função imediatamente. Esse é um padrão tão comum no desenvolvimento web em JavaScript que tem até um nome: IIFE (*immediately-invoked function expression*, ou expressão de função invocada imediatamente).
+
