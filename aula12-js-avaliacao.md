@@ -1,7 +1,7 @@
 ---
 layout: lisp
 title:  "JavaScript: Introdução e funções de alta ordem"
-date:   2016-09-21 16:40:00 -0300
+date:   2016-10-05 16:40:00 -0300
 categories: aula
 ---
 
@@ -416,9 +416,10 @@ Dica: use o operador ternário `?:`. A expressão `condicao ? x : y` retorna `x`
 
 <div class="lesson">
 <textarea class="code">
-let maiorNota = filmes.map(x => x.nota).reduce(/* complete o código */);
+let maiorNota = filmes.map(f => f.nota)
+                      .reduce(/* complete o código */);
 
-teste(18.5, somaNotas);
+teste(5, maiorNota);
 </textarea>
 <div class="output"></div>
 <div class="output"></div>
