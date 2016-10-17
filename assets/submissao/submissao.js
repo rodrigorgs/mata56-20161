@@ -58,73 +58,56 @@ function carregaRespostasId(id) {
 officialTests = [
 ``,
 `
-var metade = descontoPercentual(50);
-var dezPerc = descontoPercentual(10);
-var cemPerc = descontoPercentual(100);
-var zeroPerc = descontoPercentual(0);
-try {teste(21, metade(42));} catch (e) {console.log(e);}
-try {teste(27, dezPerc(30));} catch (e) {console.log(e);}
-try {teste(6.5, metade(13));} catch (e) {console.log(e);}
-try {teste(30, zeroPerc(30) );} catch (e) {console.log(e);}
-try {teste(0, cemPerc(45));} catch (e) {console.log(e);}
-try {teste(29.7, dezPerc(33));} catch (e) {console.log(e);}
-try {teste(0, cemPerc(42.5));} catch (e) {console.log(e);}
-try {teste(112.1, zeroPerc(112.1));} catch (e) {console.log(e);}
-try {teste(10, descontoPercentual(50)(20));} catch (e) {console.log(e);}
-try {teste(true, typeof descontoPercentual(10) === 'function');} catch (e) {console.log(e);}
+(teste 12 (area '(3 4)))
+(teste 100 (area '(2 50)))
+(teste 5 (area '(1 5)))
+(teste 3 (area '(2 1.5)))
+(teste 4.5 (area '(3 1.5)))
+(teste 0.75 (area '(0.5 1.5)))
+(teste 10000 (area '(100 100)))
+(teste 4 (area '(2 2)))
+(teste 0.09 (area '(0.3 0.3)))
+(teste 999 (area '(1 999)))
 `,
 `
-try {teste(1, fatorial(0));} catch (e) {console.log(e);}
-try {teste(2, fatorial(2));} catch (e) {console.log(e);}
-try {teste(6, fatorial(3));} catch (e) {console.log(e);}
-try {teste(24, fatorial(4));} catch (e) {console.log(e);}
-try {teste(120, fatorial(5));} catch (e) {console.log(e);}
-try {teste(720, fatorial(6));} catch (e) {console.log(e);}
-try {teste(2432902008176640000, fatorial(20));} catch (e) {console.log(e);}
-try {teste(51090942171709440000, fatorial(21));} catch (e) {console.log(e);}
-try {teste(1.1240007277776077e+21, fatorial(22));} catch (e) {console.log(e);}
-var fat170 = fatorial(170);
-try {teste(true, fat170 > 7.257415615307994e+305 && fat170 < 7.257415615307994e+307);} catch (e) {console.log(e);}
+(teste t (comprimento-par '(m a t a 5 6)))
+(teste t (comprimento-par '()))
+(teste Nil (comprimento-par '(2)))
+(teste Nil (comprimento-par '(2 4 6)))
+(teste t (comprimento-par '(m Nil)))
+(teste t (comprimento-par '(1 '(3 5))))
+(teste Nil (comprimento-par '(()) ))
+(teste Nil (comprimento-par '(2 (4) 6)))
+(teste t (comprimento-par '(1 2 3 4 5 6 7 8 9 10 11 12)))
+(teste Nil (comprimento-par '(1 2 3 4 5 6 7 8 9 10 11) ))
 `,
 `
-try {teste(1, erroAbsolutoMedio([1, 3], 2));} catch (e) {console.log(e);}
-try {teste(2, erroAbsolutoMedio([1, 3, 4, 6], 2));} catch (e) {console.log(e);}
-try {teste(2.8, erroAbsolutoMedio([1, 3, 4, 6, 8], 2));} catch (e) {console.log(e);}
-try {teste(3, erroAbsolutoMedio([5], 2));} catch (e) {console.log(e);}
-try {teste(5, erroAbsolutoMedio([5, 10, 15, 20, 10, 5, 5], 5));} catch (e) {console.log(e);}
-try {teste(1, erroAbsolutoMedio([4, 2], 2));} catch (e) {console.log(e);}
-try {teste(2, erroAbsolutoMedio([4, 2, 6], 2));} catch (e) {console.log(e);}
-try {teste(2.5, erroAbsolutoMedio([5, -4, 0, -1], -1));} catch (e) {console.log(e);}
-try {teste(11, erroAbsolutoMedio([11], 0));} catch (e) {console.log(e);}
-try {teste(0, erroAbsolutoMedio([], 2));} catch (e) {console.log(e);}
-`,
-`
-(teste t (lista-par '(m a t a 5 6)))
-(teste t (lista-par '()))
-(teste Nil (lista-par '(a)))
-(teste t (lista-par '(a b)))
-(teste Nil (lista-par '(4 5 16)))
-(teste Nil (lista-par '(42 l i s p)))
-(teste t (lista-par '(1 ())))
-(teste Nil (lista-par '(())))
-(teste Nil (lista-par '((1 2))))
-(teste t (lista-par '((1 2 3) (1 2 3))))
-`,
-`
-(teste t (tem-impar '(2 (3) 4)))
-(teste Nil (tem-impar '(2 (4) 4)))
-(teste t (tem-impar '(7 (0) 9)))
-(teste Nil (tem-impar '(0 (0) 0)))
-(teste t (tem-impar '(0 (3) 0)))
+(teste t (tem-impar '(2 (3 2) 4)))
 (teste Nil (tem-impar '()))
-(teste t (tem-impar '(((17)))))
-(teste Nil (tem-impar '((()))))
-(teste t (tem-impar '(2 (6 3) 4)))
-(teste t (tem-impar '((((2) 17)))))
+(teste t (tem-impar '(((((((3)))))))))
+(teste t (tem-impar '(8 6 2 5)))
+(teste Nil (tem-impar '(((((((2)))))))))
+(teste t (tem-impar '(2 (6 (2 3 2)) 4)))
+(teste Nil (tem-impar '(())))
+(teste t (tem-impar '(2 (6 (3 2)) 4)))
+(teste Nil (tem-impar '((0))))
+(teste t (tem-impar '(+ 1 2)))
+`,
+`
+(teste '(7 9) (filtro (lambda (x) (> x 5)) '(7 4 3 9)))
+(teste '(4 3) (filtro (lambda (x) (< x 5)) '(7 4 3 9)))
+(teste '(6 7 9 6) (filtro (lambda (x) (> x 5)) '(6 7 4 3 9 6)))
+(teste '() (filtro (lambda (x) (> x 5)) '()))
+(teste '(2 8) (filtro (lambda (x) (= 0 (% x 2))) '(1 2 3 5 8 13)))
+(teste '(1 3 5 13) (filtro (lambda (x) (= 1 (% x 2))) '(1 2 3 5 8 13)))
+(teste '() (filtro (lambda (x) (> 20)) '(1 2 3 5 8 13)))
+(teste '() (filtro (lambda (x) (> 20)) '()))
+(teste '() (filtro (lambda (x) (> x 5)) '(5)))
+(teste '(5) (filtro (lambda (x) (>= x 5)) '(5)))
 `
 ];
 
-respostaIds = [3993, 4200, 4189, 2443, 4094, 1348, 2514, 4198, 1299, 3325, 3902, 4027, 3247, 4168, 1929, 3856, 4187, 1440, 4087, 4195, 3881, 4184, 3697, 1560, 2849, 4154, 3799, 2302, 3894, 4211, 4067, 4172, 4060, 3702, 3813, 4202, 4063, 4135, 3908];
+respostaIds = [4594, 4867, 2708, 5396, 2599, 2973, 1622, 3858, 2482, 2334, 4847, 4712, 2684, 5368, 1567, 2157, 5304, 2780, 4649, 2764, 1512, 2918, 2393, 983, 2831, 2209, 2925, 3592, 1883, 2745, 2905, 2971, 4896, 832, 4825, 2963, 5125, 4870, 5364, 2922, 4937, 5319, 2247, 4945, 4753, 4629, 2746, 5397, 2404, 5386, 4822, 5354, 4756, 1579, 2597, 2093, 2041, 2855, 4959];
 respostaIdx = undefined;
 
 function carregaRespostaStep(step) {

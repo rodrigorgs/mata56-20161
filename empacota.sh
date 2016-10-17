@@ -10,6 +10,7 @@ fi
 
 mkdir $DEST
 cp -r _site $DEST/mata56
+cp _PROCEDIMENTO_PROVA.md $DEST/mata56
 oldpwd=`pwd`
 
 cd $DEST/mata56

@@ -1,3 +1,5 @@
+# Aplicação da prova
+
 ## Preparação
 
 1. Edite o arquivo `_layouts/lisp.html` se for necessário alterar algo no template.
@@ -31,3 +33,31 @@
 1. Pare o servidor PHP (Ctrl+C) e o MySQL (Ctrl+D).
 2. Execute o comando `mysqldump -uroot -proot mata56 | gzip > /tmp/respostas.sql.gz`
 3. Copie o arquivo resultante para o pendrive.
+
+--------------------
+
+# Correção da prova
+
+## Importação dos dados
+
+1. Conecte ao MySQL e crie um banco de dados chamado `mata56`. Ex.: `mysql -uroot -proot`; `create database mata56;`
+2. Importe os dados salvos. Ex.: `gzcat /tmp/respostas.sql.gz | mysql -uroot -proot mata56`
+
+## Preparação
+
+1. Edite o arquivo `_layouts/lisp.html` se for necessário alterar algo no template.
+2. Se necessário, altere a senha do banco de dados nos arquivos `login.php` e `load.php`.
+3. Crie um link simbólico de `_site` em `/tmp/mata56`: ``cd _site; ln -s `pwd` /tmp/mata56``
+4. Inicie o servidor PHP: `cd /tmp; php -S localhost:8000 -t .`
+
+## Web
+
+1. Acesse <http://localhost:8000/mata56/list.php?apostila=prova-funcional>. Troque `prova-funcional` pelo nome da apostila configurado no código-fonte da prova, em uma linha iniciada por `window.apostila = `.
+2. Pegue os ids listados e coloque-os no arquivo `assets/submissao/submissao.js`, onde tem `respostaIds = `.
+3. Troque os testes em `assets/submissao/submissao.js`, onde tem `officialTests = `.
+
+## Correção
+
+1. Acesse <http://localhost:8000/mata56/prova-lisp.html> (ou qualquer que seja a página da prova, servida pelo servidor PHP).
+2. Clique no botão `>>` para avançar e `<<`.
+
