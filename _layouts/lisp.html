@@ -158,7 +158,7 @@ function teste(expected, actual) {
 		console.log("%cOK!", "color: green;");
 	} else {
 		testesErrados += 1;
-		console.log("%cERRO! Esperado: " + expected + "; obtido: " + actual, "color: red;");
+		console.log("%cERRO! Esperado: " + JSON.stringify(expected) + "; obtido: " + JSON.stringify(actual), "color: red;");
 	}
 }
 
@@ -182,14 +182,12 @@ function teste(expected, actual) {
     <span id="loginbar-matricula">?</span>
 
     <span id="resposta-id"></span>
-
 	<button onclick="carregaRespostaSeguinte();" style="float: right;">>></button>
 	<button onclick="carregaRespostaAnterior();" style="float: right;"><<</button>
 	<button onclick="carregaRespostasId(prompt());" style="float: right;">Carregar</button>
 	<button onclick="rodaTudo();" style="float: right;">Rodar tudo</button>
 	<button onclick="trocaEvals();" style="float: right;">Trocar Evals</button>
 	<button onclick="destrocaEvals();" style="float: right;">Destrocar Evals</button>
-
     <button onclick="enviaRespostas()" style="float: right;">Enviar respostas</button>
 	<button onclick="showLogin();" style="float: right;">Login</button>
 	<button onclick="logout();" style="float: right;">Logout</button>
@@ -307,6 +305,7 @@ function teste(expected, actual) {
 			    mode: language,
 			    gutters: ["CodeMirror-lint-markers"],
 			    lint: true,
+			    options: { esversion: 6 },
 				matchBrackets: true,
 				autoRefresh: true,
 				tabSize: 4,
