@@ -423,8 +423,6 @@ Agora é com você. Defina a função `recarregaDados`, que obtém os dados de t
 reiniciaAplicacao = () => {
   exDisciplinas = [];
   exTurmas = [];
-  configuraBotoes();
-  trocaOrdenacao(0);
   substituiHTML('Ola, Mundo!');
 };
 
