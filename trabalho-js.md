@@ -13,6 +13,57 @@ table, th, tr, td {
 
 # Trabalho: meuhorarioJS
 
+## Prazo e forma de entrega
+
+O trabalho deve ser enviado para o e-mail <rodrigo@dcc.ufba.br> até a meia-noite do dia 29/10 (sábado), horário local de Salvador, sob a forma de um anexo contendo as respostas no formato que é obtido ao seguir o procedimento descrito a seguir. Quem fizer a questão bônus deve anexar um arquivo adicional, o arquivo HTML solicitado na questão bônus.
+
+## Salvando e carregando os dados
+
+Para **salvar** suas respostas, abra o console e execute a instrução
+
+```javascript
+prompt('', obtemRespostasJson())
+```
+
+Ou clique no botão: <button onclick="prompt('', obtemRespostasJson())">salvar respostas</button>
+
+O navegador vai abrir um janela com um campo de texto selecionado. Copie o texto (Ctrl+C) e cole (Ctrl+V) em algum editor de texto. Esse texto representa suas **respostas**.
+
+Para **carregar** suas respostas, copie (Ctrl+C) o texto que você colou anteriormente, então execute a seguinte instrução no console JavaScript
+
+```javascript
+carregaRespostasJson(prompt(''))
+```
+
+Ou clique no botão: <button onclick="carregaRespostasJson(prompt(''))">carregar respostas</button>
+
+O navegador vai abrir uma janela com um campo de texto. Cole as suas respostas, e clique em OK.
+
+## Código de conduta
+
+Nós,
+
+<div class="lesson">
+<textarea class="code">
+// Nome completo 1
+// Nome completo 2
+// Nome completo 3
+// Nome completo 4</textarea>
+<div class="output"></div>
+<div class="output"></div>
+<pre class="verifier">function(str, info) {  }</pre>
+<button class="go" style="display: none;">Rodar</button>
+</div>
+
+declaramos que 
+
+- todas as respostas são fruto de nosso próprio trabalho, 
+- não copiamos respostas de colegas externos à equipe,
+- não disponibilizamos nossas respostas para colegas externos à equipe e
+- não realizamos quaisquer outras atividades desonestas para nos beneficiar ou prejudicar outros.
+
+## Introdução: meuhorarioJS
+
 Oi, tudo bom? Você conhece o [meuhorario](http://meuhorario.dcc.ufba.br/)? Trata-se de um site feito para o aluno da UFBA simular sua matrícula, escolhendo as disciplinas e turmas que deseja cursar no próximo semestre.
 
 Neste trabalho você vai implementar um *fork* do meuhorario chamado meuhorarioJS, ou pelo menos uma parte importante do projeto: a listagem de disciplinas e turmas. Para isso, você precisará trabalhar com closures, currying, aplicação parcial e programação concorrente. Mas não se preocupe! Vou guiar você no passo-a-passo para transformar essa ideia em realidade.
