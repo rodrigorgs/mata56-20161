@@ -19,25 +19,15 @@ O trabalho deve ser enviado para o e-mail <rodrigo@dcc.ufba.br> até a meia-noit
 
 ## Salvando e carregando os dados
 
-Para **salvar** suas respostas, abra o console e execute a instrução
+Para **salvar** suas respostas, clique no botão: <button onclick="document.getElementById('textareaResposta').value = obtemRespostasJson();">salvar respostas</button>
 
-```javascript
-prompt('', obtemRespostasJson())
-```
+<small><b>Caixa de respostas:</b></small>
+<textarea id="textareaResposta">
+</textarea>
 
-Ou clique no botão: <button onclick="prompt('', obtemRespostasJson())">salvar respostas</button>
+Clique na caixa de texto acima e selecione todo o texto (Ctrl+A), em seguida copie o texto (Ctrl+C) da caixa de texto acima e cole (Ctrl+V) em algum editor de texto. Esse texto representa suas **respostas**.
 
-O navegador vai abrir um janela com um campo de texto selecionado. Copie o texto (Ctrl+C) e cole (Ctrl+V) em algum editor de texto. Esse texto representa suas **respostas**.
-
-Para **carregar** suas respostas, copie (Ctrl+C) o texto que você colou anteriormente, então execute a seguinte instrução no console JavaScript
-
-```javascript
-carregaRespostasJson(prompt(''))
-```
-
-Ou clique no botão: <button onclick="carregaRespostasJson(prompt(''))">carregar respostas</button>
-
-O navegador vai abrir uma janela com um campo de texto. Cole as suas respostas, e clique em OK.
+Para **carregar** suas respostas, copie (Ctrl+C) o texto que você colou anteriormente, cole na caixa de texto acima, e então clique no botão: <button onclick="carregaRespostasJson(document.getElementById('textareaResposta').value);">carregar respostas</button>
 
 ## Código de conduta
 
